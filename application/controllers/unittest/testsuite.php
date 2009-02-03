@@ -7,7 +7,6 @@ class TestSuite extends Controller
 	function __construct()
 	{
 		parent::__construct();
-		$this->auth->restrict_role('admin');
 	}
 
 	function index()
