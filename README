@@ -1,9 +1,11 @@
-ciut - Unit Testing Suite for CodeIgiter
-========================================
+ciut - Unit Testing Suite for CodeIgniter
+=========================================
 J. Knight <emptyvee@gmail.com>
-:Author Initials: MTV
+:Author Initials: jbk
 
 CIUT is a simple unit testing suite for CodeIgniter. 
+
+You can get the code at: http://github.com/mtvee/ciut/tree/master
 
 The structure of the repo is the basic structure I use. Check out
 the comments in the header of 'application/libraries/unittest.php'
