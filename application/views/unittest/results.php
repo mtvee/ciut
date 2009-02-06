@@ -21,27 +21,29 @@
 
 <h2>Details</h2>
 		
-<?php foreach( $results->tests as $test => $result ): ?>
-	<table class="uttable">
-	<caption><?= $test ?></caption>
-	<tr>
-		<th>Method</th><th>Result</th><th>Message</th><tr>
-	<?php
-	$count = 0;
-	foreach( $results->tests[$test] as $method ): ?>
-	 	<tr  <?=($count % 2 ? 'class="odd"' : "")?> > 
-			<td width="30%"><?= $method["test"] ?></td> 
-			<?php if($method["result"]) { ?>
-				<td class="utpass">Passed: <?=$method['asserts']?> asserts
-			<?php } else { ?>
-				<td class="utfail">Failed
-			<?php } ?>
-		</td><td><?=$method["error"]?></td>
-		</tr>
-	<?php $count++;
-		endforeach; ?>
-	</table>
-	<p/>
-<?php endforeach; ?>
+<?php if( $results->tests ) {
+		foreach( $results->tests as $test => $result ): ?>
+		<table class="uttable">
+		<caption><?= $test ?></caption>
+		<tr>
+			<th>Method</th><th>Result</th><th>Message</th><tr>
+		<?php
+		$count = 0;
+		foreach( $results->tests[$test] as $method ): ?>
+		 	<tr  <?=($count % 2 ? 'class="odd"' : "")?> > 
+				<td width="30%"><?= $method["test"] ?></td> 
+				<?php if($method["result"]) { ?>
+					<td class="utpass">Passed: <?=$method['asserts']?> asserts
+				<?php } else { ?>
+					<td class="utfail">Failed
+				<?php } ?>
+			</td><td><?=$method["error"]?></td>
+			</tr>
+		<?php $count++;
+			endforeach; ?>
+		</table>
+		<p/>
+<?php endforeach; } ?>
+
 
 
