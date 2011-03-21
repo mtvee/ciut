@@ -2,18 +2,17 @@
 /** 
  * A simple unit tester and suite for CodeIgniter.
  *
+ * There are two classes in this file, 'Ciut' which you can load from
+ * your controller, and 'UnitTest' which you can extend your test from.
+ *
  * <code>
  * $this->load->library('ciut');
- * // if the tests are somewhere else, set this
- * //$this->ciut->set_test_path( APPPATH . '/tests' )'
  * if( $this->ciut->run()) {
  *   $this->load->view('results', array('results' => $this->ciut ));
  * } else {
  *   echo "Error running tests.";   
  * } 
  * </code> 
- *
- * - adapted for CodeIgniter - 20090130 - jk
  *
  * @category       UnitTesting
  * @package        Talon
