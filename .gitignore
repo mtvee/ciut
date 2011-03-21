@@ -1,0 +1,5 @@
+application/config
+application/errors
+system
+.DS_Store
+index.php

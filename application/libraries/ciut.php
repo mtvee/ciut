@@ -2,14 +2,12 @@
 /** 
  * A simple unit tester and suite for CodeIgniter.
  *
- * Note: this is not strictly a CI library. It is not loadable
- * via the normal means of $CI->load->library('unittest'); Don't
- * do that!!!
- *
  * <code>
- * $ut = new UnitTester( "path/to/tests" );
- * if( $ut->run()) {
- *   $this->load->view('results', array('results' => $ut ));
+ * $this->load->library('ciut');
+ * // if the tests are somewhere else, set this
+ * //$this->ciut->set_test_path( APPPATH . '/tests' )'
+ * if( $this->ciut->run()) {
+ *   $this->load->view('results', array('results' => $this->ciut ));
  * } else {
  *   echo "Error running tests.";   
  * } 
@@ -228,12 +226,14 @@ class UnitTest
  *	}
  * </code>
  */
-class UnitTestSuite
+class Ciut
 {
 	/**
 	 * A string used to store the directory in which to look for tests.
 	 */
 	var $dir;
+	// CI instance
+	var $ci;
 
 	// various statistics
 	var $num_files = 0;
@@ -248,12 +248,26 @@ class UnitTestSuite
 
 	/**
 	 * Constructor.
-	 * 
-	 * @param $dir The directory in which to look for tests.
 	 */
-	function __construct( $dir )
+	function __construct( )
 	{
-		$this->dir = $dir;
+		if( function_exists('get_instance')) {
+			// see if we have the path in the config
+			$this->ci =& get_instance();
+			$this->dir = $this->ci->config->item('unit_test_path');
+			if( !$this->dir ) {
+				// set a default
+				$this->dir = APPPATH . '/tests';
+			}
+		}
+	}
+
+	/**
+	 * Set the path for unit tests
+	 */
+	function set_test_path( $dir )
+	{		
+		$this->dir = $dir;	
 	}
 	
 	/**

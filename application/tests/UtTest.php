@@ -1,7 +1,5 @@
 <?php  if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-include_once( APPPATH . '/libraries/unittest.php' );
-
 class UtTest extends UnitTest
 {	
 	function __construct()
