@@ -19,11 +19,11 @@
  * @package        Talon
  * @author         J. Knight <emptyvee at gmail dot com>
  * @license        GPLv3
- * @copyright      Copyright (c) 2006-2009, J. Knight
+ * @copyright      Copyright (c) 2006-2011, J. Knight
  */
 
 /*
- * Copyright (C) 2009 J. Knight <emptyvee at gmail dot com>
+ * Copyright (C) 2009-2011 J. Knight <emptyvee at gmail dot com>
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
