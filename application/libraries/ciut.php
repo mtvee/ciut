@@ -22,22 +22,6 @@
  * @copyright      Copyright (c) 2006-2011, J. Knight
  */
 
-/*
- * Copyright (C) 2009-2011 J. Knight <emptyvee at gmail dot com>
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see http://www.gnu.org/licenses.
- */
 
 /** **********************************************************************
  * Base class for a unit test
@@ -201,30 +185,13 @@ class UnitTest
  * A class for unit testing CodeIgniter.
  *
  * This is the class that collects and runs all the tests.
- * I put all my tests in 'APPPATH/tests' but you can put them wherever.
  *
- * e.g.
- * <code>
- *	include_once( APPPATH . '/libraries/unittest.php');
+ * The default location for tests is 'APPPATH/tests' but you can put them 
+ * wherever you like and set the path with 
+ *   $config['unit_test_path'] = 'SOME_PATH';
+ * or
+ *   $this->cuit->set_test_path( 'SOME_PATH' );
  *
- *	class TestSuite extends Controller
- *	{
- *		function __construct()
- *		{
- *			parent::__construct();
- *		}
- *
- *		function index()
- *		{
- *			$ut = new UnitTestSuite( APPPATH . '/tests' );
- *			$ut->run();
- *			$this->load->view('unittest/header');
- *			$this->load->view('unittest/results', array('results' => $ut));
- *			$this->load->view('unittest/footer');
- *		}
- *
- *	}
- * </code>
  */
 class Ciut
 {
@@ -415,5 +382,22 @@ class Ciut
 		return $tests;
 	}	
 }
+
+/*
+ * Copyright (C) 2009-2011 J. Knight <emptyvee at gmail dot com>
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see http://www.gnu.org/licenses.
+ */
 
 ?>
