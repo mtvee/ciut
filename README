@@ -5,10 +5,10 @@ J. Knight <emptyvee ATT gmail DOT com>
 
 CIUT is a simple unit testing suite for CodeIgniter. 
 
-You can get the code at: http://github.com/mtvee/ciut/tree/master
+You can get the code at: http://github.com/mtvee/ciut
 
 The structure of the repo is the basic structure I use. Check out
-the comments in the header of 'application/libraries/ciut.php'
+the comments in the header of 'application/libraries/Ciut.php'
 for more details. I think things should be self-explanatory.
 
 If you have any comments/fixes/questions etc, please feel free to contact me
@@ -16,3 +16,7 @@ at the address above.
 
 Hope this helps your coding! :)
 
+Changes
+-------
+
+- Updated for CI 3.x 2017-11-17 (there is a ci2.x branch in the repo)

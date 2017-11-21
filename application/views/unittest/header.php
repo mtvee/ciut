@@ -1,3 +1,5 @@
+<?php if(!is_cli()): ?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
@@ -31,3 +33,10 @@
 
 <h1>Unit Tests</h1>
 <h4><?= date( "D, M j Y G:i:s T" )?></h4>
+
+<?php else: ?>
+Unit Tests: <?= date( "D, M j Y G:i:s T" )?>
+
+=========================================
+
+<?php endif; ?>

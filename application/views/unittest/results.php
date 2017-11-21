@@ -1,3 +1,4 @@
+<?php if(!is_cli()): ?>
 
 <h2>Results</h2>
 <table class="uttable">
@@ -45,5 +46,48 @@
 		<p/>
 <?php endforeach; } ?>
 
+<?php else: ?>
+Results
+-------
 
+ Files: <?=$results->num_files?>
+
+ Tests: <?=$results->num_tests?>
+
+Passed: <?=$results->num_passed?>
+
+Failed: <?= $results->num_failed?>
+
+  Time: <?= $this->benchmark->elapsed_time('total_execution_time_start', 'total_execution_time_end');?> seconds
+
+Details
+-------
+
+<?php if( $results->tests ) {
+		foreach( $results->tests as $test => $result ): ?>
+		
+### <?= $test ?>
+
+<?php echo str_pad("Method", 30) .  str_pad("Result",10) .  str_pad("Message",20) ?>
+		<?php
+		$count = 0;
+		$str = '';
+		foreach( $results->tests[$test] as $method ): ?>
+<?php $str .= str_pad($method["test"],30); ?> 
+				<?php if($method["result"]) { ?>
+<?php $str .= str_pad("Passed: ". $method['asserts'] . " asserts",10); ?>
+				<?php } else { ?>
+<?php $str .= str_pad("Failed",10); ?>
+				<?php } ?>
+<?php $str .= str_pad($method["error"], 20) ?>
+		
+<?php echo $str; $str = '';?>
+		<?php $count++;
+			endforeach; ?>
+
+<?php endforeach; } ?>
+
+
+
+<?php endif; ?>
 
